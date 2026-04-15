@@ -1,24 +1,24 @@
 import React from 'react';
 import logo from './logo.svg';
+import { Pods } from './components/Pods';
+import { Nodes } from './components/Nodes';
+import { Logs } from './components/Logs';
+
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <header></header>
+      <main>
+        <h1>Aranya Cluster Visualization</h1>
+        <div>
+          <Pods />
+          <Nodes />
+          <Logs />
+        </div>
+      </main>
+      <footer></footer>
     </div>
   );
 }
