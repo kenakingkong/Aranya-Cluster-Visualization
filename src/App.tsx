@@ -1,22 +1,13 @@
-import React from 'react';
-import logo from './logo.svg';
-import { Pods } from './components/Pods';
-import { Nodes } from './components/Nodes';
-import { Logs } from './components/Logs';
-
 import './App.css';
+import { Cluster } from './components/cluster';
 
 function App() {
   return (
     <div>
       <header></header>
-      <main>
+      <main className='p-8'>
         <h1>Aranya Cluster Visualization</h1>
-        <div>
-          <Pods />
-          <Nodes />
-          <Logs />
-        </div>
+        <Cluster />
       </main>
       <footer></footer>
     </div>
