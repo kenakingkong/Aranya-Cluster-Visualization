@@ -28,13 +28,14 @@ export const useClusterContext = () => {
 
 export const ClusterProvider = ({ children }: any) => {
   const [nodes, setNodes] = useState([])
-  const [selectedNode, setselectedNode] = useState<any>(null)
+  const [selectedNode, setSelectedNode] = useState<any>(null)
   const [pods, setPods] = useState([])
   const [selectedPod, setSelectedPod] = useState<any>(null)
 
   function selectNode(uuid: string) {
     if (selectedNode && selectedNode.metadata.uid === uuid) {
-      setselectedNode(null)
+      setSelectedNode(null)
+      setSelectedPod(null)
       return;
     }
 
@@ -44,7 +45,7 @@ export const ClusterProvider = ({ children }: any) => {
       return;
     }
 
-    setselectedNode(node)
+    setSelectedNode(node)
   }
 
   function selectPod(uid: string) {

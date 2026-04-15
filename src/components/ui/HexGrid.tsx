@@ -23,8 +23,12 @@ export const HexGrid = ({ items, cols = 5, renderHex }: { items: any[], cols?: n
           {row.map((item, i) => (
             <div
               key={i}
-              className="flex items-center justify-center cursor-pointer"
-              style={{ width: HEX_W, height: HEX_H }}
+              className="hex-animate flex items-center justify-center cursor-pointer"
+              style={{
+                width: HEX_W,
+                height: HEX_H,
+                animationDelay: `${(r * cols + i) * 60}ms`,
+              }}
             >
               <div
                 className="flex items-center justify-center text-center hover:opacity-75 transition-opacity"

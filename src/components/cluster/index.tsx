@@ -9,7 +9,7 @@ export const Cluster = () => {
     <ClusterProvider>
       <Nodes />
       <Pods />
-      {/* <PodLogsNoStream /> */}
+      <PodLogsNoStream />
       <PodLogs />
     </ClusterProvider>
   )

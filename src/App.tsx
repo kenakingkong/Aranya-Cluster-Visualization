@@ -5,8 +5,8 @@ function App() {
   return (
     <div>
       <header></header>
-      <main className='p-8'>
-        <h1>Aranya Cluster Visualization</h1>
+      <main className='p-8 space-y-2'>
+        <h1 className='text-5xl'>Aranya Cluster Visualization</h1>
         <Cluster />
       </main>
       <footer></footer>

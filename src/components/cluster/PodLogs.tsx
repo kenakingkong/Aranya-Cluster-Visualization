@@ -2,13 +2,14 @@ import { useEffect, useRef } from 'react'
 import classNames from 'classnames'
 import { usePodLogs } from '../hooks/usePodLogs'
 import { useClusterContext } from './context'
+import { SectionHeader } from '../ui/SectionHeader'
 
 type LogLevel = 'error' | 'warn' | 'info'
 
 const LEVEL_CLASS: Record<LogLevel, string> = {
   error: 'text-red-800 bg-red-50',
-  warn:  'text-yellow-800 bg-yellow-50',
-  info:  '',
+  warn: 'text-yellow-800 bg-yellow-50',
+  info: '',
 }
 
 const Logs = ({
@@ -53,9 +54,9 @@ export const PodLogs = () => {
   const podName = selectedPod.metadata.name
   const podNamespace = selectedPod.metadata.namespace
   return (
-    <div>
-      <h2 className="text-lg font-semibold mb-2">Logs for Pod: {podName}</h2>
+    <section className="py-2 space-y-2">
+      <SectionHeader>Streaming Logs for Pod: {podName}</SectionHeader>
       <Logs namespace={podNamespace} pod={podName} />
-    </div>
+    </section>
   )
 }

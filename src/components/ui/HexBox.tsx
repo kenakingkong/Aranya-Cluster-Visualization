@@ -5,3 +5,11 @@ export const HexBox = ({ className, children }: { className?: string; children: 
     {children}
   </div>)
 }
+
+HexBox.Title = ({ children }: { children: React.ReactNode }) => {
+  return <p className="text-base font-bold">{children}</p>
+}
+
+HexBox.Subtitle = ({ children }: { children: React.ReactNode }) => {
+  return <p className="text-xs">{children}</p>
+}

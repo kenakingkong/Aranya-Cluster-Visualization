@@ -12,14 +12,12 @@ export const Pod = ({ pod }: { pod: any }) => {
   const isRunning = podStatus === "Running"
 
   return (
-    <button
-      onClick={() => selectPod(pod.metadata.uid)}
-      className={classNames(selectedPod && selectedPod.metadata.uid === pod.metadata.uid ? "text-red-100" : "")}>
+    <button onClick={() => selectPod(pod.metadata.uid)}  >
       <HexBox className={classNames(isRunning ? "hex-pod-running" : "hex-pod-not-running")}>
         <div>
-          <p className="text-base font-bold">{podName}</p>
-          <p className="text-xs">{podNamespace} - {podHash}</p>
-          <p className="text-xs">{isRunning ? '🟢' : '🔴'} {podStatus}</p>
+          <HexBox.Title>{podName}</HexBox.Title>
+          <HexBox.Subtitle>{podNamespace} - {podHash}</HexBox.Subtitle>
+          <HexBox.Subtitle>{isRunning ? '🟢' : '🔴'} {podStatus}</HexBox.Subtitle>
         </div>
       </HexBox>
     </button>

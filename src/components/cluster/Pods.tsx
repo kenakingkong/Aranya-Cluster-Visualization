@@ -1,6 +1,7 @@
 import { useClusterContext } from "./context"
 import { Pod } from "./Pod"
 import { HexGrid } from "../ui/HexGrid"
+import { SectionHeader } from "../ui/SectionHeader"
 
 export const Pods = () => {
   const { selectedNode, pods } = useClusterContext()
@@ -19,14 +20,14 @@ export const Pods = () => {
   }
 
   return (
-    <div>
-      <h2>Pods ({pods.length})</h2>
+    <section className="py-2 space-y-2">
+      <SectionHeader>Pods ({pods.length})</SectionHeader>
       <HexGrid
         items={pods}
         cols={5}
         renderHex={(pod) => (
           <Pod key={pod.metadata.uid} pod={pod} />
         )} />
-    </div>
+    </section>
   )
 }
